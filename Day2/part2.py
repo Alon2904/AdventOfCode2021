@@ -17,20 +17,22 @@ for line in lines:
     arr_size.append(b)
 
 depth = 0
-distance = 0
-count = 0
+horizontal = 0
+aim = 0
 
 for i in range(0,len(arr_inst)):
+
         if arr_inst[i] == "forward":
-            distance = distance + int(arr_size[i])
-            count = count+1
+            horizontal = horizontal + int(arr_size[i])
+            depth = aim * int(arr_size[i])
 
         if arr_inst[i] == "down":
-            depth = depth + int(arr_size[i])
+            aim = aim + int(arr_size[i])
 
         if arr_inst[i] == "up":
-            depth = depth - int(arr_size[i])
+            aim = aim - int(arr_size[i])
+
 
       
-print("depth: " ,depth, "distance", distance)
-print("depth * distance= ", depth*distance)
+print("depth: " ,depth, "horizontal", horizontal)
+print("depth * horizontal= ", depth * horizontal)
